@@ -3,10 +3,10 @@ package wire_test
 import (
 	"testing"
 
-	"github.com/openzipkin-contrib/zipkin-go-opentracing"
-	"github.com/openzipkin-contrib/zipkin-go-opentracing/flag"
-	"github.com/openzipkin-contrib/zipkin-go-opentracing/types"
-	"github.com/openzipkin-contrib/zipkin-go-opentracing/wire"
+	"github.com/space307/zipkin-go-opentracing"
+	"github.com/space307/zipkin-go-opentracing/flag"
+	"github.com/space307/zipkin-go-opentracing/types"
+	"github.com/space307/zipkin-go-opentracing/wire"
 )
 
 func TestProtobufCarrier(t *testing.T) {

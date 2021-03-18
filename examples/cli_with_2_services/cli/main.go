@@ -9,8 +9,8 @@ import (
 
 	opentracing "github.com/opentracing/opentracing-go"
 
-	zipkin "github.com/openzipkin-contrib/zipkin-go-opentracing"
-	"github.com/openzipkin-contrib/zipkin-go-opentracing/examples/cli_with_2_services/svc1"
+	zipkin "github.com/space307/zipkin-go-opentracing"
+	"github.com/space307/zipkin-go-opentracing/examples/cli_with_2_services/svc1"
 )
 
 const (
