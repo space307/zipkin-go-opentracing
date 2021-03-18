@@ -8,7 +8,7 @@ import (
 	"github.com/opentracing/opentracing-go/ext"
 
 	otobserver "github.com/opentracing-contrib/go-observer"
-	"github.com/openzipkin-contrib/zipkin-go-opentracing/flag"
+	"github.com/space307/zipkin-go-opentracing/flag"
 )
 
 // ErrInvalidEndpoint will be thrown if hostPort parameter is corrupted or host
@@ -223,11 +223,11 @@ func WithMaxLogsPerSpan(limit int) TracerOption {
 // NewTracer creates a new OpenTracing compatible Zipkin Tracer.
 func NewTracer(recorder SpanRecorder, options ...TracerOption) (opentracing.Tracer, error) {
 	opts := &TracerOptions{
-		recorder:             recorder,
-		shouldSample:         alwaysSample,
-		trimUnsampledSpans:   false,
-		newSpanEventListener: func() func(SpanEvent) { return nil },
-		logger:               &nopLogger{},
+		recorder:                   recorder,
+		shouldSample:               alwaysSample,
+		trimUnsampledSpans:         false,
+		newSpanEventListener:       func() func(SpanEvent) { return nil },
+		logger:                     &nopLogger{},
 		debugAssertSingleGoroutine: false,
 		debugAssertUseAfterFinish:  false,
 		clientServerSameSpan:       true,
