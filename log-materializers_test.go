@@ -35,7 +35,7 @@ func getLogFields() []log.Field {
 
 func TestMaterializeWithJSON(t *testing.T) {
 	logFields := getLogFields()
-	want := `{"bool":"true","error":"an error","event":"EventValue","float32":"32.123001","float64":"64.123000","int":"42","int32":"32","int64":"64","lazy":"logger","object":"{a:42 b:string}","string":"value","uint32":"32","uint64":"64"}`
+	want := `{"bool":"true","error.object":"an error","event":"EventValue","float32":"32.123001","float64":"64.123000","int":"42","int32":"32","int64":"64","lazy":"logger","object":"{a:42 b:string}","string":"value","uint32":"32","uint64":"64"}`
 	have, err := MaterializeWithJSON(logFields)
 	if err != nil {
 		t.Fatalf("expected json string, got error %+v", err)
@@ -47,7 +47,7 @@ func TestMaterializeWithJSON(t *testing.T) {
 
 func TestMaterializeWithLogFmt(t *testing.T) {
 	logFields := getLogFields()
-	want := `bool=true string=value error="an error" float32=32.123 float64=64.123 int=42 int32=32 int64=64 uint32=32 uint64=64 object="unsupported value type" event=EventValue`
+	want := `bool=true string=value error.object="an error" float32=32.123 float64=64.123 int=42 int32=32 int64=64 uint32=32 uint64=64 object="unsupported value type" event=EventValue`
 	have, err := MaterializeWithLogFmt(logFields)
 	if err != nil {
 		t.Fatalf("expected logfmt string, got error %+v", err)
